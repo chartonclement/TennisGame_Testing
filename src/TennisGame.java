@@ -76,14 +76,14 @@ public class TennisGame {
 				else
 					return "player2 wins";
 			}
-			
-			if (player1Points >= 4 && player1Points == player2Points)
+			//Mistake: the deuce is at 3 not at 4 because each player are at 40 at 3.
+			if (player1Points >= 3 && player1Points == player2Points)
 				return "deuce";
 			
 			if (player1Points >= 4 && player1Points - player2Points == 1)
 				return "player1 has advantage";
-			
-			if (player2Points > 4 && player2Points - player1Points == 1)
+			//Mistake: they forgot the = before the 4 without the player 2 dont take adventage in the first case.
+			if (player2Points >= 4 && player2Points - player1Points == 1)
 				return "player2 has advantage";							
 			
 			return  player2Score + " - " + player1Score ;
